@@ -1,6 +1,6 @@
 """
 serializers.py
-Authers: Muhammad Kamran Naqeebi(mkrnaqeebi)
+Authers: 
 Reviewed by: 
 RestInterface Serializers Configuration
 

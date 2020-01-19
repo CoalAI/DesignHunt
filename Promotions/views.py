@@ -1,6 +1,6 @@
 """
 Promotions/views.py
-Authors: Muhammad Kamran Naqeebi(@mkrnaqeebi)
+Authors:
 """
 from rest_framework import generics
 

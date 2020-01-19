@@ -189,5 +189,5 @@ STATICFILES_DIRS = (
 )
 
 ADMINS = [
-    ('Muhammad Kamran', 'mkrnaqeebi@gmail.com'),
+    ('admin', 'admin@gmail.com'),
 ]
