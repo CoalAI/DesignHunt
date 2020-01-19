@@ -1,3 +1,16 @@
-from django.shortcuts import render
+"""
+Promotions/views.py
+Authors: Muhammad Kamran Naqeebi(@mkrnaqeebi)
+"""
+from rest_framework import generics
 
-# Create your views here.
+from Promotions.models import Promotion
+from Promotions.serializes import PromotionSerializer
+
+
+class PromotionViewSet(generics.ListAPIView):
+    """
+    RestInterface.v2.views.OrderDoughnutViewSet
+    """
+    serializer_class = PromotionSerializer
+    queryset = Promotion.objects.all()

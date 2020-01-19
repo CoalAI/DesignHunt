@@ -134,7 +134,8 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
@@ -150,10 +151,13 @@ JWT_AUTH = {
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-CORS_ORIGIN_WHITELIST = (
-    os.getenv('FRONT_END_IP'),
-    os.getenv('BACK_END_IP')
-)
+# CORS_ORIGIN_WHITELIST = (
+#     os.getenv('FRONT_END_IP'),
+#     os.getenv('BACK_END_IP'),
+#     'localhost:8080',
+#     '127.0.0.1:8000',
+# )
+CORS_ORIGIN_ALLOW_ALL = True
 
 AUTH_USER_MODEL = 'Authentication.User'
 
@@ -181,7 +185,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, '..', 'Authentication', 'static'),
+    os.path.join(BASE_DIR, 'Authentication', 'static'),
 )
 
 ADMINS = [
