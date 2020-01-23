@@ -1,7 +1,7 @@
 """
 serializers.py
-Authers: 
-Reviewed by: 
+Authers:
+Reviewed by:
 RestInterface Serializers Configuration
 
 For more information please see:
@@ -22,14 +22,10 @@ ModelSerializer
             fields = '__all__'
 
 """
-import datetime
-import json
-
-from django.db import models
 from rest_framework import serializers
 
-from Authentication.models import User
-from Promotions.models import Promotion
+from authentication.models import User
+from promotions.models import Promotion
 
 
 class UserSerializer(serializers.ModelSerializer):

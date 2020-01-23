@@ -41,13 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # custom
-    'Authentication',
-    'Promotions',
+    'authentication',
+    'promotions',
 
     # third party
     'rest_framework',
-    'corsheaders',
-    'rest_auth',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -159,7 +158,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # )
 CORS_ORIGIN_ALLOW_ALL = True
 
-AUTH_USER_MODEL = 'Authentication.User'
+AUTH_USER_MODEL = 'authentication.User'
 
 ALLOW_ALL_TABLE = os.getenv('ALLOW_ALL_TABLE') or False
 
@@ -185,7 +184,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'Authentication', 'static'),
+    os.path.join(BASE_DIR, 'apps/authentication', 'static'),
 )
 
 ADMINS = [

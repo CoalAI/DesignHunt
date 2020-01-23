@@ -4,8 +4,8 @@ Authors:
 """
 from rest_framework import generics
 
-from Promotions.models import Promotion
-from Promotions.serializes import PromotionSerializer
+from promotions.models import Promotion
+from promotions.serializes import PromotionSerializer
 
 
 class PromotionViewSet(generics.ListAPIView):
