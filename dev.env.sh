@@ -1,0 +1,11 @@
+export ENGINE='django.db.backends.something'
+export NAME='development'
+export USER='mkrnaqeebi'
+export PASSWORD='Kamran!12754'
+export HOST='127.0.0.1'
+export PORT=3306
+export BACK_END_IP='127.0.0.1'
+export FRONT_END_IP='127.0.0.1'
+export SECRET_KEY='my-secret-key-is-mysecret-key'
+export ADMIN_NAME='administrator'
+export DEBUG=True

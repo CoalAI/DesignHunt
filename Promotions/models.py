@@ -1,20 +1,19 @@
 """
-Promotions/models.py
+Doc string needed here
 """
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-# Create your models here.
-
-MEDIUM_CHOICES = (
-    ('fb', 'Facebook'),
-    ('email', 'Email'),
-)
 
 class Promotion(models.Model):
     """
     Promotion Model create in database
     """
+    MEDIUM_CHOICES = (
+        ('MEDIUM_FB', 'Facebook'),
+        ('MEDIUM_EMAIL', 'Email'),
+    )
+
     company_name = models.CharField(_('Company name'), max_length=256)
     company_domain = models.CharField(_('Company Domain'), max_length=256)
     email_from = models.EmailField(_('Email From'), max_length=256, null=True, blank=True)
@@ -26,7 +25,7 @@ class Promotion(models.Model):
     email_mobile = models.URLField(null=True, blank=True)
     email_desktop = models.URLField(null=True, blank=True)
     techknowlogy = models.CharField(_('Email powered by'), max_length=64, null=True, blank=True)
-    medium = models.CharField(_('Medium'), default='fb', choices=MEDIUM_CHOICES, max_length=64)
+    medium = models.CharField(_('Medium'), default='MEDIUM_FB', choices=MEDIUM_CHOICES, max_length=64)
     recieved_at = models.DateTimeField(null=True, blank=True)
 
     updated_at = models.DateTimeField(auto_now=True)

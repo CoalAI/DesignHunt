@@ -1,13 +1,13 @@
 """
-Promotions/urls.py
+Doc string needed here
 """
-from django.urls import include, path
-from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
+from django.urls import path
 
 from Promotions.views import PromotionViewSet
 
-# Wire up our API using automatic URL routing.
-# Additionally, we include login URLs for the browsable API.
+# from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
+
+
 urlpatterns = [
     path('promotion/', PromotionViewSet.as_view()),
 ]
