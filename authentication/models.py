@@ -13,4 +13,4 @@ class User(AbstractUser):
     contact_number = models.CharField(_('Contact Number'), max_length=32, null=True, blank=True)
 
     def __str__(self):
-        return self.contact_number
+        return self.username

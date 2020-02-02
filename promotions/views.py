@@ -8,9 +8,14 @@ from promotions.models import Promotion
 from promotions.serializes import PromotionSerializer
 
 
-class PromotionViewSet(generics.ListAPIView):
+class PromotionViewSet(generics.ListCreateAPIView):
     """
     RestInterface.v2.views.OrderDoughnutViewSet
     """
     serializer_class = PromotionSerializer
-    queryset = Promotion.objects.all()
+
+    def get_queryset(self):
+        hostname = self.request.query_params.get('hostname') or None
+        if hostname:
+            return Promotion.objects.filter(company_domain=hostname)
+        return []
