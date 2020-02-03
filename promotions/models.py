@@ -33,3 +33,25 @@ class Promotion(models.Model):
 
     def __str__(self):
         return self.promotion_heading
+
+
+class MailGun(models.Model):
+    recipient = models.EmailField(null=True, blank=True)
+    sender = models.EmailField(null=True, blank=True)
+    _from = models.EmailField(null=True, blank=True)
+    subject = models.CharField(max_length=256, null=True, blank=True)
+    body_plain = models.TextField(null=True, blank=True)
+    stripped_text = models.TextField(null=True, blank=True)
+    stripped_signature = models.TextField(null=True, blank=True)
+    body_html = models.TextField(null=True, blank=True)
+    stripped_html = models.TextField(null=True, blank=True)
+    attachment_count = models.IntegerField(null=True, blank=True)
+    attachment_x = models.TextField(null=True, blank=True)
+    timestamp = models.IntegerField(null=True, blank=True)
+    token = models.TextField(null=True, blank=True)
+    signature = models.TextField(null=True, blank=True)
+    message_headers = models.TextField(null=True, blank=True)
+    content_id_map = models.TextField(null=True, blank=True)
+
+    def __str__(self):
+        return self.recipient

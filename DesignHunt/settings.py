@@ -25,7 +25,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = [os.getenv('FRONT_END_IP'), os.getenv('BACK_END_IP')]
+ALLOWED_HOSTS = [os.getenv('FRONT_END_IP'), os.getenv('BACK_END_IP'), '*']
 
 CSRF_TRUSTED_ORIGINS = [os.getenv('FRONT_END_IP')]
 

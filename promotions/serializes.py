@@ -25,7 +25,7 @@ ModelSerializer
 from rest_framework import serializers
 
 from authentication.models import User
-from promotions.models import Promotion
+from promotions.models import MailGun, Promotion
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -46,4 +46,13 @@ class PromotionSerializer(serializers.ModelSerializer):
     """
     class Meta:
         model = Promotion
+        fields = '__all__'
+
+
+class MailGunSerializer(serializers.ModelSerializer):
+    """
+    MailGun
+    """
+    class Meta:
+        model = MailGun
         fields = '__all__'
