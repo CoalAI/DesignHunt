@@ -36,10 +36,12 @@ class Promotion(models.Model):
 
 
 class MailGun(models.Model):
-    recipient = models.EmailField(null=True, blank=True)
-    sender = models.EmailField(null=True, blank=True)
-    _from = models.EmailField(null=True, blank=True)
-    subject = models.CharField(max_length=256, null=True, blank=True)
+    recipient = models.TextField(null=True, blank=True)
+    sender = models.TextField(null=True, blank=True)
+    capital_from = models.TextField(null=True, blank=True)
+    from_from = models.TextField(null=True, blank=True)
+    subject = models.TextField(null=True, blank=True)
+    subject_subject = models.TextField(null=True, blank=True)
     body_plain = models.TextField(null=True, blank=True)
     stripped_text = models.TextField(null=True, blank=True)
     stripped_signature = models.TextField(null=True, blank=True)
@@ -52,6 +54,21 @@ class MailGun(models.Model):
     signature = models.TextField(null=True, blank=True)
     message_headers = models.TextField(null=True, blank=True)
     content_id_map = models.TextField(null=True, blank=True)
+    domain = models.TextField(null=True, blank=True)
+    x_envelope_from = models.TextField(null=True, blank=True)
+    x_google_dkim_signature = models.TextField(null=True, blank=True)
+    to_to = models.TextField(null=True, blank=True)
+    dkim_signature = models.TextField(null=True, blank=True)
+    x_received = models.TextField(null=True, blank=True)
+    date_date = models.TextField(null=True, blank=True)
+    message_id = models.TextField(null=True, blank=True)
+    mime_version = models.TextField(null=True, blank=True)
+    received_received = models.TextField(null=True, blank=True)
+    message_url = models.TextField(null=True, blank=True)
+    x_mailgun_incoming = models.TextField(null=True, blank=True)
+    x_gm_message_state = models.TextField(null=True, blank=True)
+    content_type = models.TextField(null=True, blank=True)
+    x_google_smtp_source = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.recipient
