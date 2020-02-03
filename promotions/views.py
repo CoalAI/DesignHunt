@@ -26,10 +26,14 @@ class MailGunViewSet(generics.ListCreateAPIView):
     RestInterface.v2.views.OrderDoughnutViewSet
     """
     serializer_class = MailGunSerializer
-    queryset = MailGun.objects.all()
+
+    def get_queryset(self):
+        hostname = self.request.query_params.get('hostname') or None
+        if hostname:
+            return MailGun.objects.filter(domain__icontains=hostname)
+        return []
 
     def perform_create(self, serializer):
-        print(serializer)
         instance = serializer.save()
         instance.capital_from = self.request.data['From']
         instance.from_from = self.request.data['from']
