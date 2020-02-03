@@ -30,7 +30,7 @@ class MailGunViewSet(generics.ListCreateAPIView):
     def get_queryset(self):
         hostname = self.request.query_params.get('hostname') or None
         if hostname:
-            return MailGun.objects.filter(domain__icontains=hostname)
+            return MailGun.objects.filter(domain__contains=hostname)
         return []
 
     def perform_create(self, serializer):
