@@ -182,3 +182,14 @@ STATICFILES_DIRS = (
 ADMINS = [
     ('admin', 'admin@gmail.com'),
 ]
+
+GS_PROJECT_ID = os.getenv('GS_PROJECT_ID')
+GS_STATIC_BUCKET_NAME = os.getenv('GS_PROJECT_ID')
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = "media/"
+
+GOOGLE_APPLICATION_CREDENTIALS = os.getenv('GOOGLE_APPLICATION_CREDENTIALS')
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+GS_BUCKET_NAME = os.getenv('GS_PROJECT_ID')
+STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'

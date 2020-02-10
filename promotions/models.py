@@ -69,6 +69,8 @@ class MailGun(models.Model):
     x_gm_message_state = models.TextField(null=True, blank=True)
     content_type = models.TextField(null=True, blank=True)
     x_google_smtp_source = models.TextField(null=True, blank=True)
+    desktop_shot = models.ImageField(null=True, blank=True, upload_to='desktop')
+    mobile_shot = models.ImageField(null=True, blank=True, upload_to='desktop')
 
     def __str__(self):
-        return self.recipient
+        return self.sender
