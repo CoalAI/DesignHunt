@@ -21,5 +21,10 @@ class CustomUserAdmin(UserAdmin):
     )
 
 
-admin.site.register(MailGun)
+class MailGunAdmin(admin.ModelAdmin):
+    list_display = ('sender', 'subject',)
+    search_fields = ('sender', 'subject', 'body_plain', 'body_html',)
+
+
+admin.site.register(MailGun, MailGunAdmin)
 admin.site.register(User, CustomUserAdmin)
